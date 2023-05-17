@@ -5,6 +5,8 @@
 package DAO;
 
 import Interface.IDAOUjian;
+import com.mysql.jdbc.PreparedStatement;
+//import com.mysql.jdbc.PreparedStatement;
 //import com.mysql.jdbc.Statement;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -28,8 +30,31 @@ public class DAOUjian implements IDAOUjian{
     
     /**
      *
-     * @return
+     * @param b
      */
+    
+    @Override
+    public void insert(ujian b) {
+        PreparedStatement statement = null;
+        try {
+            statement = (PreparedStatement) con.prepareStatement(strInsert);
+            
+            statement.setInt(1, b.getId_ujian());
+            statement.setString(1, b.getNama_matpel());
+            statement.setInt(1, b.getJumlah_soal());
+            statement.execute();
+        } catch (SQLException e) {
+            System.out.println("tidak tampil:"+e);
+        }
+        finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                System.out.println("tidak berhasil:"+ex);
+            }
+        }
+    }
+    
     @Override
     public List<ujian> getAll() {
         List<ujian> tblUjian = null;
@@ -54,5 +79,5 @@ public class DAOUjian implements IDAOUjian{
     
     Connection con;
     String strRead = "select * from ujian;";
-    
+    String strInsert = "insert into ujian(id_ujian, nama_matpel, jumlah_soal) VALUES (?,?,?);";
 }

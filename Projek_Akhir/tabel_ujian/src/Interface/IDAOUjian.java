@@ -12,4 +12,5 @@ import model.ujian;
  */
 public interface IDAOUjian {
     public List<ujian> getAll();
+    public void insert(ujian b);
 }
