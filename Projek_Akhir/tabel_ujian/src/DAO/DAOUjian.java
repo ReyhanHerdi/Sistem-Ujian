@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 //import model.tbl_ujian;
 import model.ujian;
 
@@ -40,17 +41,73 @@ public class DAOUjian implements IDAOUjian{
             statement = (PreparedStatement) con.prepareStatement(strInsert);
             
             statement.setInt(1, b.getId_ujian());
-            statement.setString(1, b.getNama_matpel());
-            statement.setInt(1, b.getJumlah_soal());
+            statement.setString(2, b.getNama_matpel());
+            statement.setInt(3, b.getJumlah_soal());
             statement.execute();
+            JOptionPane.showInternalMessageDialog(null, "simpan data berhasil");
+            
         } catch (SQLException e) {
             System.out.println("tidak tampil:"+e);
+            JOptionPane.showInternalMessageDialog(null, "ID sudah terdaftar");
         }
         finally {
             try {
                 statement.close();
             } catch (SQLException ex) {
                 System.out.println("tidak berhasil:"+ex);
+            }
+        }
+    }
+    
+    @Override
+    public void update(ujian b) {
+        PreparedStatement statement = null;
+        try {
+            statement = (PreparedStatement) con.prepareStatement(strUpdate);
+            
+            //statement.setInt(1, b.getId_ujian());
+            statement.setString(1, b.getNama_matpel());
+            statement.setInt(2, b.getJumlah_soal());
+            statement.setInt(3, b.getId_ujian());
+            statement.execute();
+            
+            JOptionPane.showInternalMessageDialog(null, "edit data berhasil");
+        } catch (SQLException e) {
+            System.out.println("update gagal:"+e);
+        }
+        finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                System.out.println("update gagal:"+ex);
+            }
+        }
+    }
+    
+    @Override
+    public void delete(int id_ujian) {
+        PreparedStatement statement = null;
+        try {
+            int confirm = JOptionPane.showConfirmDialog(null, "hapus data?");
+            
+            if (confirm == 0) {
+                System.out.print(confirm);
+                statement = (PreparedStatement) con.prepareStatement(strDelete);
+
+                //statement.setInt(1, b.getId_ujian());
+                statement.setInt(1, id_ujian);
+                statement.execute();
+
+                JOptionPane.showInternalMessageDialog(null, "hapus data berhasil");
+            }
+        } catch (SQLException e) {
+            System.out.println("hapus data gagal:"+e);
+        }
+        finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                System.out.println("hapus data gagal:"+ex);
             }
         }
     }
@@ -80,4 +137,6 @@ public class DAOUjian implements IDAOUjian{
     Connection con;
     String strRead = "select * from ujian;";
     String strInsert = "insert into ujian(id_ujian, nama_matpel, jumlah_soal) VALUES (?,?,?);";
+    String strUpdate = "update ujian set nama_matpel=?, jumlah_soal=? where id_ujian=?;";
+    String strDelete = "delete from ujian where id_ujian=?;";
 }
