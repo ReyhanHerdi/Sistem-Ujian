@@ -63,7 +63,7 @@
                               <Component id="txtJkl" min="-2" pref="64" max="-2" attributes="0"/>
                               <Component id="txtKelas" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="txtNo_Telp" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="dateTgl_Lahir" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="txtTgl_Lahir" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="txtNama_Peserta" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -138,7 +138,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="dateTgl_Lahir" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTgl_Lahir" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -304,9 +304,9 @@
             <Property name="text" type="java.lang.String" value="Password"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="dateTgl_Lahir">
+        <Component class="javax.swing.JTextField" name="txtTgl_Lahir">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateTgl_LahirActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTgl_LahirActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNo_Telp">

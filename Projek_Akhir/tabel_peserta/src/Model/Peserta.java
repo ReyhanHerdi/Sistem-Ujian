@@ -4,8 +4,6 @@
  */
 package Model;
 
-import java.util.Date;
-
 /**
  *
  * @author DAFFA
@@ -57,14 +55,14 @@ public class Peserta {
     /**
      * @return the tgl_lahir
      */
-    public Date getTgl_lahir() {
+    public String getTgl_lahir() {
         return tgl_lahir;
     }
 
     /**
      * @param tgl_lahir the tgl_lahir to set
      */
-    public void setTgl_lahir(Date tgl_lahir) {
+    public void setTgl_lahir(String tgl_lahir) {
         this.tgl_lahir = tgl_lahir;
     }
 
@@ -127,7 +125,7 @@ public class Peserta {
     private Integer id_peserta;
     private String email;
     private String nama_peserta;
-    private Date tgl_lahir;
+    private String tgl_lahir;
     private String no_telp;
     private String kelas;
     private String jenis_kelamin;

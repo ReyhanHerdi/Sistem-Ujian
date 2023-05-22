@@ -27,18 +27,18 @@ public class FormPeserta extends javax.swing.JFrame {
     }
 
     /**
-     * @return the dateTgl_Lahir
+     * @return the txtTgl_Lahir
      */
    
-    public javax.swing.JTextField getDateTgl_Lahir() {
-        return dateTgl_Lahir;
+    public javax.swing.JTextField getTxtTgl_Lahir() {
+        return txtTgl_Lahir;
     }
 
     /**
-     * @param dateTgl_Lahir the dateTgl_Lahir to set
+     * @param txtTgl_Lahir the txtTgl_Lahir to set
      */
-    public void setDateTgl_Lahir(javax.swing.JTextField dateTgl_Lahir) {
-        this.dateTgl_Lahir = dateTgl_Lahir;
+    public void setTxtTgl_Lahir(javax.swing.JTextField txtTgl_Lahir) {
+        this.txtTgl_Lahir = txtTgl_Lahir;
     }
 
     /**
@@ -176,7 +176,7 @@ public class FormPeserta extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        dateTgl_Lahir = new javax.swing.JTextField();
+        txtTgl_Lahir = new javax.swing.JTextField();
         txtNo_Telp = new javax.swing.JTextField();
         txtKelas = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
@@ -268,9 +268,9 @@ public class FormPeserta extends javax.swing.JFrame {
 
         jLabel10.setText("Password");
 
-        dateTgl_Lahir.addActionListener(new java.awt.event.ActionListener() {
+        txtTgl_Lahir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dateTgl_LahirActionPerformed(evt);
+                txtTgl_LahirActionPerformed(evt);
             }
         });
 
@@ -329,7 +329,7 @@ public class FormPeserta extends javax.swing.JFrame {
                             .addComponent(txtJkl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNo_Telp, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateTgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNama_Peserta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -386,7 +386,7 @@ public class FormPeserta extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dateTgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTgl_Lahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -464,9 +464,9 @@ public class FormPeserta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNo_TelpActionPerformed
 
-    private void dateTgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateTgl_LahirActionPerformed
+    private void txtTgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgl_LahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dateTgl_LahirActionPerformed
+    }//GEN-LAST:event_txtTgl_LahirActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         ctPst.reset();
@@ -548,7 +548,6 @@ public class FormPeserta extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnUbah;
-    private javax.swing.JTextField dateTgl_Lahir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -570,6 +569,7 @@ public class FormPeserta extends javax.swing.JFrame {
     private javax.swing.JTextField txtNama_Peserta;
     private javax.swing.JTextField txtNo_Telp;
     private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtTgl_Lahir;
     // End of variables declaration//GEN-END:variables
     Controller.ControllerPeserta ctPst;
 

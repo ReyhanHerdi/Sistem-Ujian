@@ -10,7 +10,6 @@ import view.FormPeserta;
 import Model.ModelTabelPeserta;
 import java.util.List;
 import DAOInterface.IDAOPeserta;
-//import java.util.Date;
 import javax.swing.JOptionPane;
 
 
@@ -40,7 +39,7 @@ public class ControllerPeserta {
         b.setId_peserta(Integer.valueOf(frmPeserta.getTxtID_Peserta().getText()));
         b.setEmail(frmPeserta.getTxtEmail().getText());
         b.setNama_peserta(frmPeserta.getTxtNama_Peserta().getText());
-        //b.setTgl_lahir(Date(frmPeserta.getDateTgl_Lahir().getText()));
+        b.setTgl_lahir(frmPeserta.getTxtTgl_Lahir().getText());
         b.setNo_telp(frmPeserta.getTxtNo_Telp().getText());
         b.setKelas(frmPeserta.getTxtKelas().getText());
         b.setJenis_kelamin(frmPeserta.getTxtJkl().getSelectedItem().toString());
@@ -53,12 +52,12 @@ public class ControllerPeserta {
     
     public void reset()
     {
-        if (!frmPeserta.getTxtID_Peserta().isEnabled())
-            frmPeserta.getTxtID_Peserta().setEnabled(true);
+     if (!frmPeserta.getTxtID_Peserta().isEnabled())
+          frmPeserta.getTxtID_Peserta().setEnabled(true);
         frmPeserta.getTxtID_Peserta().setText("");
         frmPeserta.getTxtEmail().setText("");
         frmPeserta.getTxtNama_Peserta().setText("");
-        //frmPeserta.getDateTgl_Lahir().setText("");
+        frmPeserta.getTxtTgl_Lahir().setText("");
         frmPeserta.getTxtNo_Telp().setText("");
         frmPeserta.getTxtKelas().setText("");
         frmPeserta.getTxtJkl().setSelectedItem("L");
@@ -72,7 +71,7 @@ public class ControllerPeserta {
         frmPeserta.getTxtID_Peserta().setText(lstPst.get(row).getId_peserta().toString());
         frmPeserta.getTxtEmail().setText(lstPst.get(row).getEmail());
         frmPeserta.getTxtNama_Peserta().setText(lstPst.get(row).getNama_peserta());
-        //frmPeserta.getDateTgl_Lahir().setText(lstPst.get(row).getTgl_lahir());
+        frmPeserta.getTxtTgl_Lahir().setText(lstPst.get(row).getTgl_lahir());
         frmPeserta.getTxtNo_Telp().setText(lstPst.get(row).getNo_telp());
         frmPeserta.getTxtKelas().setText(lstPst.get(row).getKelas());
         frmPeserta.getTxtJkl().setSelectedItem(lstPst.get(row).getJenis_kelamin());
@@ -85,7 +84,7 @@ public class ControllerPeserta {
         Peserta b = new Peserta();
         b.setEmail(frmPeserta.getTxtEmail().getText());
         b.setNama_peserta(frmPeserta.getTxtNama_Peserta().getText());
-        //b.setTgl_lahir(Date(frmPeserta.getDateTgl_Lahir().getText()));
+        b.setTgl_lahir(frmPeserta.getTxtTgl_Lahir().getText());
         b.setNo_telp(frmPeserta.getTxtNo_Telp().getText());
         b.setKelas(frmPeserta.getTxtKelas().getText());
         b.setJenis_kelamin(frmPeserta.getTxtJkl().getSelectedItem().toString());
@@ -98,10 +97,8 @@ public class ControllerPeserta {
     
     public void delete()
     {
-        Peserta b =  new Peserta();
         iPeserta.delete(Integer.parseInt(frmPeserta.getTxtID_Peserta().getText()));
         JOptionPane.showMessageDialog(null, "delete berhasil");
-
     }
     
     FormPeserta frmPeserta;

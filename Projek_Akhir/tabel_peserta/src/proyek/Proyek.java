@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package dappaproyek;
+package proyek;
 
 import helper.KoneksiDB;
 /**
  *
  * @author dappa
  */
-public class DappaProyek {
+public class Proyek {
 
     /**
      * @param args the command line arguments

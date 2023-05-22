@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import DAOInterface.IDAOPeserta;
 import com.mysql.jdbc.PreparedStatement;
-import java.sql.Date;
 /**
  *
  * @author DAFFA
@@ -39,7 +38,7 @@ public class DAOPeserta implements IDAOPeserta{
             statement.setInt(1, b.getId_peserta());
             statement.setString(2, b.getEmail());
             statement.setString(3, b.getNama_peserta());
-            statement.setDate(4, (Date) b.getTgl_lahir());
+            statement.setString(4, b.getTgl_lahir());
             statement.setString(5, b.getNo_telp());
             statement.setString(6, b.getKelas());
             statement.setString(7, b.getJenis_kelamin());
@@ -69,7 +68,7 @@ public class DAOPeserta implements IDAOPeserta{
             
             statement.setString(1, b.getEmail());
             statement.setString(2, b.getNama_peserta());
-            statement.setDate(3, (Date) b.getTgl_lahir());
+            statement.setString(3, b.getTgl_lahir());
             statement.setString(4, b.getNo_telp());
             statement.setString(5, b.getKelas());
             statement.setString(6, b.getJenis_kelamin());
@@ -126,7 +125,7 @@ public class DAOPeserta implements IDAOPeserta{
                 pst.setId_peserta(rs.getInt("id_peserta"));
                 pst.setEmail(rs.getString("email"));
                 pst.setNama_peserta(rs.getString("nama_peserta"));
-                pst.setTgl_lahir(rs.getDate("tgl_lahir"));
+                pst.setTgl_lahir(rs.getString("tgl_lahir"));
                 pst.setNo_telp(rs.getString("no_telp"));
                 pst.setKelas(rs.getString("kelas"));
                 pst.setJenis_kelamin(rs.getString("jenis_kelamin"));
