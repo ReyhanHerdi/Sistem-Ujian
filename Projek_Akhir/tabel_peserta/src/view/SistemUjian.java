@@ -4,41 +4,87 @@
  */
 package view;
 
-import javax.swing.JTable;
-
 /**
  *
- * @author DAFFA
+ * @author reyha
  */
-public class FormPeserta extends javax.swing.JFrame {
+public class SistemUjian extends javax.swing.JFrame {
 
     /**
-     * @return the txtJkl
+     * @return the TabelDataUjian
      */
-    public javax.swing.JComboBox<String> getTxtJkl() {
-        return txtJkl;
+    public javax.swing.JTable getTabelDataUjian() {
+        return TabelDataUjian;
     }
 
     /**
-     * @param txtJkl the txtJkl to set
+     * @param TabelDataUjian the TabelDataUjian to set
      */
-    public void setTxtJkl(javax.swing.JComboBox<String> txtJkl) {
-        this.txtJkl = txtJkl;
+    public void setTabelDataUjian(javax.swing.JTable TabelDataUjian) {
+        this.TabelDataUjian = TabelDataUjian;
     }
 
     /**
-     * @return the txtTgl_Lahir
+     * @return the tabelData
      */
-   
-    public javax.swing.JTextField getTxtTgl_Lahir() {
-        return txtTgl_Lahir;
+    public javax.swing.JTable getTabelData() {
+        return tabelData;
     }
 
     /**
-     * @param txtTgl_Lahir the txtTgl_Lahir to set
+     * @param tabelData the tabelData to set
      */
-    public void setTxtTgl_Lahir(javax.swing.JTextField txtTgl_Lahir) {
-        this.txtTgl_Lahir = txtTgl_Lahir;
+    public void setTabelData(javax.swing.JTable tabelData) {
+        this.tabelData = tabelData;
+    }
+
+    /**
+     * @return the jumlah_soal
+     */
+    
+    public SistemUjian() {
+        initComponents();
+        ctPst = new Controller.ControllerPeserta(this);
+        ctPst.isiTable();
+        ctUjn = new Controller.UjianController(this);
+        ctUjn.isiTabel();
+        
+    }
+
+    /**
+     * @param jumlah_soal the jumlah_soal to set
+     */
+
+    /**
+     * @return the jumlah_soal1
+     */
+    public javax.swing.JLabel getJumlah_soal1() {
+        return jumlah_soal1;
+    }
+
+    /**
+     * @param jumlah_soal1 the jumlah_soal1 to set
+     */
+    public void setJumlah_soal1(javax.swing.JLabel jumlah_soal1) {
+        this.jumlah_soal1 = jumlah_soal1;
+    }
+
+    /**
+     * @return the nama_matpel
+     */
+
+    /**
+     * @return the nama_matpel1
+     */
+    public javax.swing.JLabel getNama_matpel1() {
+        return nama_matpel1;
+    }
+
+    /**
+     * @param nama_matpel1 the nama_matpel1 to set
+     */
+    public void setNama_matpel1(javax.swing.JLabel nama_matpel1) {
+        this.nama_matpel1 = nama_matpel1;
     }
 
     /**
@@ -70,6 +116,24 @@ public class FormPeserta extends javax.swing.JFrame {
     }
 
     /**
+     * @return the txtID
+     */
+
+    /**
+     * @return the txtID1
+     */
+    public javax.swing.JTextField getTxtID1() {
+        return txtID1;
+    }
+
+    /**
+     * @param txtID1 the txtID1 to set
+     */
+    public void setTxtID1(javax.swing.JTextField txtID1) {
+        this.txtID1 = txtID1;
+    }
+
+    /**
      * @return the txtID_Peserta
      */
     public javax.swing.JTextField getTxtID_Peserta() {
@@ -84,6 +148,38 @@ public class FormPeserta extends javax.swing.JFrame {
     }
 
     /**
+     * @return the txtJkl
+     */
+    public javax.swing.JComboBox<String> getTxtJkl() {
+        return txtJkl;
+    }
+
+    /**
+     * @param txtJkl the txtJkl to set
+     */
+    public void setTxtJkl(javax.swing.JComboBox<String> txtJkl) {
+        this.txtJkl = txtJkl;
+    }
+
+    /**
+     * @return the txtJumlahSoal
+     */
+
+    /**
+     * @return the txtJumlahSoal1
+     */
+    public javax.swing.JTextField getTxtJumlahSoal1() {
+        return txtJumlahSoal1;
+    }
+
+    /**
+     * @param txtJumlahSoal1 the txtJumlahSoal1 to set
+     */
+    public void setTxtJumlahSoal1(javax.swing.JTextField txtJumlahSoal1) {
+        this.txtJumlahSoal1 = txtJumlahSoal1;
+    }
+
+    /**
      * @return the txtKelas
      */
     public javax.swing.JTextField getTxtKelas() {
@@ -95,6 +191,24 @@ public class FormPeserta extends javax.swing.JFrame {
      */
     public void setTxtKelas(javax.swing.JTextField txtKelas) {
         this.txtKelas = txtKelas;
+    }
+
+    /**
+     * @return the txtMatpel
+     */
+
+    /**
+     * @return the txtMatpel1
+     */
+    public javax.swing.JTextField getTxtMatpel1() {
+        return txtMatpel1;
+    }
+
+    /**
+     * @param txtMatpel1 the txtMatpel1 to set
+     */
+    public void setTxtMatpel1(javax.swing.JTextField txtMatpel1) {
+        this.txtMatpel1 = txtMatpel1;
     }
 
     /**
@@ -140,13 +254,19 @@ public class FormPeserta extends javax.swing.JFrame {
     }
 
     /**
-     * Creates new form FormMahasiswa
+     * @return the txtTgl_Lahir
      */
-    public FormPeserta() {
-        initComponents();
-        ctPst = new Controller.ControllerPeserta(this);
-        ctPst.isiTable();
+    public javax.swing.JTextField getTxtTgl_Lahir() {
+        return txtTgl_Lahir;
     }
+
+    /**
+     * @param txtTgl_Lahir the txtTgl_Lahir to set
+     */
+    public void setTxtTgl_Lahir(javax.swing.JTextField txtTgl_Lahir) {
+        this.txtTgl_Lahir = txtTgl_Lahir;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,6 +277,7 @@ public class FormPeserta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -183,8 +304,29 @@ public class FormPeserta extends javax.swing.JFrame {
         txtJkl = new javax.swing.JComboBox<>();
         btnSimpan = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        id_ujian1 = new javax.swing.JLabel();
+        txtID1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        nama_matpel1 = new javax.swing.JLabel();
+        txtMatpel1 = new javax.swing.JTextField();
+        jumlah_soal1 = new javax.swing.JLabel();
+        txtJumlahSoal1 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TabelDataUjian = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("ID Peserta");
 
@@ -342,7 +484,7 @@ public class FormPeserta extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtID_Peserta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -372,7 +514,7 @@ public class FormPeserta extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(77, 77, 77)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtID_Peserta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
@@ -420,8 +562,155 @@ public class FormPeserta extends javax.swing.JFrame {
                             .addComponent(btnHapus)
                             .addComponent(btnUbah)
                             .addComponent(btnSimpan))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        id_ujian1.setText("ID Ujian");
+
+        txtID1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtID1ActionPerformed(evt);
+            }
+        });
+
+        nama_matpel1.setText("Mata Pelajaran:");
+
+        jumlah_soal1.setText("Jumlah Soal");
+
+        jButton6.setText("Simpan");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Reset");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Ubah");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Hapus");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(id_ujian1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(nama_matpel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtMatpel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jumlah_soal1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtJumlahSoal1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton7))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jButton9)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton8)))
+                        .addGap(0, 16, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(id_ujian1)
+                    .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nama_matpel1)
+                    .addComponent(txtMatpel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jumlah_soal1)
+                    .addComponent(txtJumlahSoal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(152, 152, 152)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+
+        TabelDataUjian.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        TabelDataUjian.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelDataUjianMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(TabelDataUjian);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(70, 70, 70)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -429,54 +718,39 @@ public class FormPeserta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jTabbedPane1)
         );
+
+        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        ctPst.insert();
-        ctPst.isiTable();
-        ctPst.reset();
-    }//GEN-LAST:event_btnSimpanActionPerformed
-
-    private void txtJklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJklActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtJklActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+    private void txtID_PesertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID_PesertaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
+    }//GEN-LAST:event_txtID_PesertaActionPerformed
 
-    private void txtKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKelasActionPerformed
+    private void txtNama_PesertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNama_PesertaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtKelasActionPerformed
+    }//GEN-LAST:event_txtNama_PesertaActionPerformed
 
-    private void txtNo_TelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNo_TelpActionPerformed
+    private void txtCariNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariNamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNo_TelpActionPerformed
+    }//GEN-LAST:event_txtCariNamaActionPerformed
 
-    private void txtTgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgl_LahirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTgl_LahirActionPerformed
-
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        ctPst.reset();
-    }//GEN-LAST:event_btnResetActionPerformed
-
-    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        ctPst.delete();
-        ctPst.isiTable();
-        ctPst.reset();
-    }//GEN-LAST:event_btnHapusActionPerformed
+    private void tabelDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelDataMouseClicked
+        int row = getTabelData().getSelectedRow();
+        ctPst.isiField(row);
+    }//GEN-LAST:event_tabelDataMouseClicked
 
     private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
         ctPst.update();
@@ -484,26 +758,80 @@ public class FormPeserta extends javax.swing.JFrame {
         ctPst.reset();
     }//GEN-LAST:event_btnUbahActionPerformed
 
-    private void tabelDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelDataMouseClicked
-        int row = tabelData.getSelectedRow();
-        ctPst.isiField(row);
-    }//GEN-LAST:event_tabelDataMouseClicked
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        ctPst.delete();
+        ctPst.isiTable();
+        ctPst.reset();
+    }//GEN-LAST:event_btnHapusActionPerformed
 
-    private void txtCariNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariNamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCariNamaActionPerformed
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        ctPst.reset();
+    }//GEN-LAST:event_btnResetActionPerformed
 
-    private void txtNama_PesertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNama_PesertaActionPerformed
+    private void txtTgl_LahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTgl_LahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNama_PesertaActionPerformed
+    }//GEN-LAST:event_txtTgl_LahirActionPerformed
 
-    private void txtID_PesertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID_PesertaActionPerformed
+    private void txtNo_TelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNo_TelpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtID_PesertaActionPerformed
+    }//GEN-LAST:event_txtNo_TelpActionPerformed
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+    private void txtKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKelasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
+    }//GEN-LAST:event_txtKelasActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtJklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJklActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtJklActionPerformed
+
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+        ctPst.insert();
+        ctPst.isiTable();
+        ctPst.reset();
+    }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void txtID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtID1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        ctUjn.insert();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.update();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.delete();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void TabelDataUjianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelDataUjianMouseClicked
+        // TODO add your handling code here:
+        int row = getTabelDataUjian().getSelectedRow();
+        ctUjn.isiField(row);
+    }//GEN-LAST:event_TabelDataUjianMouseClicked
 
     /**
      * @param args the command line arguments
@@ -522,35 +850,39 @@ public class FormPeserta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormPeserta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemUjian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormPeserta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemUjian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormPeserta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemUjian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormPeserta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SistemUjian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormPeserta().setVisible(true);
+                new SistemUjian().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelDataUjian;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnUbah;
+    private javax.swing.JLabel id_ujian1;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -559,23 +891,29 @@ public class FormPeserta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel jumlah_soal1;
+    private javax.swing.JLabel nama_matpel1;
     private javax.swing.JTable tabelData;
     private javax.swing.JTextField txtCariNama;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtID1;
     private javax.swing.JTextField txtID_Peserta;
     private javax.swing.JComboBox<String> txtJkl;
+    private javax.swing.JTextField txtJumlahSoal1;
     private javax.swing.JTextField txtKelas;
+    private javax.swing.JTextField txtMatpel1;
     private javax.swing.JTextField txtNama_Peserta;
     private javax.swing.JTextField txtNo_Telp;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtTgl_Lahir;
     // End of variables declaration//GEN-END:variables
     Controller.ControllerPeserta ctPst;
-
-    public JTable getTabelData() {
-        return tabelData;
-    }
+    Controller.UjianController ctUjn;
     
-}
 
+}

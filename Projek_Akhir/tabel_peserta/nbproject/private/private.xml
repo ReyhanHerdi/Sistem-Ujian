@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/helper/KoneksiDB.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/Controller/ControllerPeserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/DAOInterface/IDAOPeserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/DAO/DAOPeserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/Model/ModelTabelPeserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/Model/Peserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/view/FormPeserta.java</file>
-            <file>file:/C:/Users/DAFFA/Documents/NetBeansProjects/PBO_asiq-asiq/Projek_Akhir/tabel_peserta/src/proyek/Proyek.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
