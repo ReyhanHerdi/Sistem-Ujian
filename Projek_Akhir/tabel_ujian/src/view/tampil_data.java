@@ -8,7 +8,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
- *
+ 
  * @author reyha
  */
 public class tampil_data extends javax.swing.JFrame {

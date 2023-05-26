@@ -8,7 +8,7 @@ import DAO.DAOUjian;
 import Interface.IDAOUjian;
 import view.tampil_data;
 import java.util.List;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import model.tbl_ujian;
 import model.ujian;
 
@@ -21,7 +21,7 @@ public class UjianController {
     public UjianController(tampil_data tampilData){
         this.tampilData = tampilData;
         iUjian = new DAOUjian();
-        //iUjian.getAll();
+        iUjian.getAll();
     }
     
     public void isiTabel(){
@@ -32,9 +32,9 @@ public class UjianController {
     
     public void insert(){
         ujian b = new ujian();
-        b.setId_ujian(Integer.parseInt(tampilData.gettxtID().getText()));
+        b.setId_ujian(Integer.valueOf(tampilData.gettxtID().getText()));
         b.setNama_matpel(tampilData.gettxtMatpel().getText());
-        b.setJumlah_soal(Integer.parseInt(tampilData.gettxtJumlahsoal().getText()));
+        b.setJumlah_soal(Integer.valueOf(tampilData.gettxtJumlahsoal().getText()));
         iUjian.insert(b);
         //JOptionPane.showConfirmDialog(null, "input berhasil");
     }
@@ -58,14 +58,13 @@ public class UjianController {
     public void update(){
         ujian b = new ujian();
         b.setNama_matpel(tampilData.gettxtMatpel().getText());
-        b.setJumlah_soal(Integer.parseInt(tampilData.gettxtJumlahsoal().getText()));
-        b.setId_ujian(Integer.parseInt(tampilData.gettxtID().getText()));
+        b.setJumlah_soal(Integer.valueOf(tampilData.gettxtJumlahsoal().getText()));
+        b.setId_ujian(Integer.valueOf(tampilData.gettxtID().getText()));
         iUjian.update(b);
         //JOptionPane.showConfirmDialog(null, "update berhasil");
     }
     
     public void delete(){
-        ujian b = new ujian();
         //b.setId_ujian();
         iUjian.delete(Integer.parseInt(tampilData.gettxtID().getText()));
         //JOptionPane.showConfirmDialog(null, "hapus data berhasil");

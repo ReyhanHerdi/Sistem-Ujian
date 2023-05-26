@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package projek2_netbeans;
+package proyek;
 
 import helper.KoneksiDB;
 /**
  *
- * @author reyha
+ * @author dappa
  */
-public class Projek2_Netbeans {
+public class Proyek {
 
     /**
      * @param args the command line arguments
