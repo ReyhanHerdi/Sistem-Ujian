@@ -43,7 +43,6 @@ public class DAOPeserta implements IDAOPeserta{
             statement.setString(6, b.getKelas());
             statement.setString(7, b.getJenis_kelamin());
             statement.setString(8, b.getPassword());
-            statement.setInt(9, b.getSkor_mtk());
             statement.execute();
         } catch (SQLException e) {
             System.out.println("tidak tampil:"+e);
