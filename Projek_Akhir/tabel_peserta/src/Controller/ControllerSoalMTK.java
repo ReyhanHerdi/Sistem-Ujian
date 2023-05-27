@@ -31,6 +31,8 @@ public class ControllerSoalMTK {
         lstSMTK = iSoalMTK.getAll();
         ModelTabelSoalMTK tabelSMTK = new ModelTabelSoalMTK(lstSMTK);
         stmUjian.getTabelMTK().setModel(tabelSMTK);
+        
+        System.out.println(lstSMTK.toString());
     }
     
     public void insert()
@@ -61,6 +63,7 @@ public class ControllerSoalMTK {
         stmUjian.getTxtID_Soal().setText(lstSMTK.get(row).getId_soal().toString());
         stmUjian.getTxtPertanyaan().setText(lstSMTK.get(row).getPertanyaan());
         stmUjian.getTxtJawaban().setText(lstSMTK.get(row).getJawaban());
+        
     }
     
     public void update()

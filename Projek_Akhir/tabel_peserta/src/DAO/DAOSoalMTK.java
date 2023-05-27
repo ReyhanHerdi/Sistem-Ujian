@@ -116,6 +116,8 @@ public class DAOSoalMTK implements IDAOSoalMTK{
                 smtk.setPertanyaan(rs.getString("pertanyaan"));
                 smtk.setJawaban(rs.getString("jawaban"));
                 lstSMTK.add(smtk);
+                
+                System.out.print(lstSMTK);
             } 
             
         }

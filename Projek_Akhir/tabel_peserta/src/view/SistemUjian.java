@@ -4,6 +4,8 @@
  */
 package view;
 
+import Controller.ControllerUjianMTK;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 
 /**
@@ -11,6 +13,146 @@ import javax.swing.JLabel;
  * @author reyha
  */
 public class SistemUjian extends javax.swing.JFrame {
+
+    /**
+     * @return the txtIdPeserta2
+     */
+    public javax.swing.JTextField getTxtIdPeserta2() {
+        return txtIdPeserta2;
+    }
+
+    /**
+     * @param txtIdPeserta2 the txtIdPeserta2 to set
+     */
+    public void setTxtIdPeserta2(javax.swing.JTextField txtIdPeserta2) {
+        this.txtIdPeserta2 = txtIdPeserta2;
+    }
+
+    /**
+     * @return the JawabanBIndo1
+     */
+    public javax.swing.JRadioButton getJawabanBIndo1() {
+        return JawabanBIndo1;
+    }
+
+    /**
+     * @param JawabanBIndo1 the JawabanBIndo1 to set
+     */
+    public void setJawabanBIndo1(javax.swing.JRadioButton JawabanBIndo1) {
+        this.JawabanBIndo1 = JawabanBIndo1;
+    }
+
+    /**
+     * @return the JawabanBIndo2
+     */
+    public javax.swing.JRadioButton getJawabanBIndo2() {
+        return JawabanBIndo2;
+    }
+
+    /**
+     * @param JawabanBIndo2 the JawabanBIndo2 to set
+     */
+    public void setJawabanBIndo2(javax.swing.JRadioButton JawabanBIndo2) {
+        this.JawabanBIndo2 = JawabanBIndo2;
+    }
+
+    /**
+     * @return the SoalBIndo1
+     */
+    public javax.swing.JLabel getSoalBIndo1() {
+        return SoalBIndo1;
+    }
+
+    /**
+     * @param SoalBIndo1 the SoalBIndo1 to set
+     */
+    public void setSoalBIndo1(javax.swing.JLabel SoalBIndo1) {
+        this.SoalBIndo1 = SoalBIndo1;
+    }
+
+    /**
+     * @return the SoalBIndo2
+     */
+    public javax.swing.JLabel getSoalBIndo2() {
+        return SoalBIndo2;
+    }
+
+    /**
+     * @param SoalBIndo2 the SoalBIndo2 to set
+     */
+    public void setSoalBIndo2(javax.swing.JLabel SoalBIndo2) {
+        this.SoalBIndo2 = SoalBIndo2;
+    }
+
+    /**
+     * @return the txtIdPeserta
+     */
+    public javax.swing.JTextField getTxtIdPeserta() {
+        return txtIdPeserta;
+    }
+
+    /**
+     * @param txtIdPeserta the txtIdPeserta to set
+     */
+    public void setTxtIdPeserta(javax.swing.JTextField txtIdPeserta) {
+        this.txtIdPeserta = txtIdPeserta;
+    }
+
+    /**
+     * @return the JawabanMTK2
+     */
+    public javax.swing.JRadioButton getJawabanMTK2() {
+        return JawabanMTK2;
+    }
+
+    /**
+     * @param JawabanMTK2 the JawabanMTK2 to set
+     */
+    public void setJawabanMTK2(javax.swing.JRadioButton JawabanMTK2) {
+        this.JawabanMTK2 = JawabanMTK2;
+    }
+
+    /**
+     * @return the jawabanMTK1
+     */
+    public javax.swing.JRadioButton getJawabanMTK1() {
+        return jawabanMTK1;
+    }
+
+    /**
+     * @param jawabanMTK1 the jawabanMTK1 to set
+     */
+    public void setJawabanMTK1(javax.swing.JRadioButton jawabanMTK1) {
+        this.jawabanMTK1 = jawabanMTK1;
+    }
+
+    /**
+     * @return the SoalMTK2
+     */
+    public javax.swing.JLabel getSoalMTK2() {
+        return SoalMTK2;
+    }
+
+    /**
+     * @param SoalMTK2 the SoalMTK2 to set
+     */
+    public void setSoalMTK2(javax.swing.JLabel SoalMTK2) {
+        this.SoalMTK2 = SoalMTK2;
+    }
+
+    /**
+     * @return the SoalMTK1
+     */
+    public javax.swing.JLabel getSoalMTK1() {
+        return SoalMTK1;
+    }
+
+    /**
+     * @param SoalMTK1 the SoalMTK1 to set
+     */
+    public void setSoalMTK1(javax.swing.JLabel SoalMTK1) {
+        this.SoalMTK1 = SoalMTK1;
+    }
 
     /**
      * @return the tabelBIND
@@ -166,6 +308,14 @@ public class SistemUjian extends javax.swing.JFrame {
         ctSMTK.isiTable();
         ctSBIND = new Controller.ControllerSoalBIND(this);
         ctSBIND.isiTable();
+        
+        ctUMTK = new Controller.ControllerUjianMTK(this);
+        ctUMTK.TampilSoal();
+        ctUMTK.TampilJawaban();
+        
+        ctUBIND = new Controller.ControllerUjianBIndo(this);
+        ctUBIND.TampilSoal();
+        ctUBIND.TampilJawaban();
 
         }
 
@@ -370,7 +520,66 @@ public class SistemUjian extends javax.swing.JFrame {
     public void setTxtTgl_Lahir(javax.swing.JTextField txtTgl_Lahir) {
         this.txtTgl_Lahir = txtTgl_Lahir;
     }
-
+    
+    public ArrayList<Object> KirimPertanyaan()
+    {
+        ArrayList<Object> soal = new ArrayList<Object>();
+        
+        int row = 0;
+        for (int i = 0; i < tabelSoalMTK.getRowCount(); i++) {
+            Object baris = tabelSoalMTK.getValueAt(row++, 1);
+            
+            soal.add(baris);
+        }
+        
+//        System.out.println(soal);
+        return soal;
+    }
+    
+    public ArrayList<Object> KirimPertanyaan1()
+    {
+        ArrayList<Object> soal = new ArrayList<Object>();
+        
+        int row = 0;
+        for (int i = 0; i < tabelSoalBIND.getRowCount(); i++) {
+            Object baris = tabelSoalBIND.getValueAt(row++, 1);
+            
+            soal.add(baris);
+        }
+        
+//        System.out.println(soal);
+        return soal;
+    }
+    
+    public ArrayList<Object> KirimJawaban()
+    {
+        ArrayList<Object> jawaban = new ArrayList<Object>();
+        
+        int row = 0;
+        for (int i = 0; i < tabelSoalMTK.getRowCount(); i++) {
+            Object baris = tabelSoalMTK.getValueAt(row++, 2);
+            
+            jawaban.add(baris);
+        }
+        
+//        System.out.println(soal);
+        return jawaban;
+    }
+    
+    public ArrayList<Object> KirimJawaban1()
+    {
+        ArrayList<Object> jawaban = new ArrayList<Object>();
+        
+        int row = 0;
+        for (int i = 0; i < tabelSoalBIND.getRowCount(); i++) {
+            Object baris = tabelSoalBIND.getValueAt(row++, 2);
+            
+            jawaban.add(baris);
+        }
+        
+//        System.out.println(soal);
+        return jawaban;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -381,6 +590,12 @@ public class SistemUjian extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MTK_1 = new javax.swing.ButtonGroup();
+        jMenu1 = new javax.swing.JMenu();
+        MTK_2 = new javax.swing.ButtonGroup();
+        BIndo_1 = new javax.swing.ButtonGroup();
+        BIndo_2 = new javax.swing.ButtonGroup();
+        jInternalFrame2 = new javax.swing.JInternalFrame();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -452,9 +667,54 @@ public class SistemUjian extends javax.swing.JFrame {
         btnReset2 = new javax.swing.JButton();
         btnSimpan2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        SoalMTK1 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jawabanMTK1 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        SoalMTK2 = new javax.swing.JLabel();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        JawabanMTK2 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        txtIdPeserta = new javax.swing.JTextField();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jPanel9 = new javax.swing.JPanel();
+        SoalBIndo1 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        SoalBIndo2 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        txtIdPeserta2 = new javax.swing.JTextField();
+        JawabanBIndo1 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        JawabanBIndo2 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jInternalFrame2.setVisible(true);
+
+        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane1.setToolTipText("");
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
@@ -699,6 +959,7 @@ public class SistemUjian extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Peserta", jPanel1);
+        jPanel1.getAccessibleContext().setAccessibleDescription("");
 
         id_ujian1.setText("ID Ujian");
 
@@ -772,7 +1033,7 @@ public class SistemUjian extends javax.swing.JFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 238, Short.MAX_VALUE)))
+                        .addGap(0, 307, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1100,7 +1361,7 @@ public class SistemUjian extends javax.swing.JFrame {
                         .addComponent(btnHapus2)
                         .addGap(18, 18, 18)
                         .addComponent(btnReset2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
@@ -1140,21 +1401,366 @@ public class SistemUjian extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Bahasa Indonesia", jPanel6);
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
+
+        SoalMTK1.setText("jLabel20");
+
+        jLabel20.setText("1");
+
+        MTK_1.add(jRadioButton1);
+        jRadioButton1.setText("jRadioButton1");
+
+        MTK_1.add(jawabanMTK1);
+        jawabanMTK1.setText("jRadioButton2");
+
+        MTK_1.add(jRadioButton3);
+        jRadioButton3.setText("jRadioButton3");
+
+        MTK_1.add(jRadioButton4);
+        jRadioButton4.setText("jRadioButton4");
+
+        MTK_1.add(jRadioButton5);
+        jRadioButton5.setText("jRadioButton5");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel21.setText("Ujian Matematika");
+
+        jLabel22.setText("2.");
+
+        SoalMTK2.setText("jLabel23");
+
+        MTK_2.add(jRadioButton2);
+        jRadioButton2.setText("jRadioButton2");
+
+        MTK_2.add(jRadioButton6);
+        jRadioButton6.setText("jRadioButton6");
+
+        MTK_2.add(jRadioButton7);
+        jRadioButton7.setText("jRadioButton7");
+
+        MTK_2.add(jRadioButton8);
+        jRadioButton8.setText("jRadioButton8");
+
+        MTK_2.add(JawabanMTK2);
+        JawabanMTK2.setText("jRadioButton9");
+
+        jButton1.setText("Kirim");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("Masukkan ID Peserta:");
+
+        txtIdPeserta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdPesertaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(437, 437, 437)
+                .addComponent(jLabel21)
+                .addGap(388, 388, 388))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtIdPeserta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(SoalMTK1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(SoalMTK2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                            .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(32, 32, 32)
+                                            .addComponent(jawabanMTK1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(31, 31, 31)
+                                            .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                            .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(33, 33, 33)
+                                            .addComponent(jRadioButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(32, 32, 32)
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jRadioButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(31, 31, 31)
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(JawabanMTK2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(622, 622, 622)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel21)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtIdPeserta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(SoalMTK1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jawabanMTK1)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton5))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(SoalMTK2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jRadioButton7)
+                    .addComponent(jRadioButton8)
+                    .addComponent(JawabanMTK2))
+                .addGap(64, 64, 64)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab5", jPanel7);
+        jPanel7.getAccessibleContext().setAccessibleName("");
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        SoalBIndo1.setText("jLabel20");
+
+        jLabel28.setText("1");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel29.setText("Ujian Bahasa Indonesia");
+
+        jLabel30.setText("2.");
+
+        SoalBIndo2.setText("jLabel23");
+
+        jButton4.setText("Kirim");
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Masukkan ID Peserta:");
+
+        txtIdPeserta2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdPeserta2ActionPerformed(evt);
+            }
+        });
+
+        BIndo_1.add(JawabanBIndo1);
+        JawabanBIndo1.setText("jRadioButton9");
+
+        BIndo_1.add(jRadioButton10);
+        jRadioButton10.setText("jRadioButton10");
+
+        BIndo_1.add(jRadioButton11);
+        jRadioButton11.setText("jRadioButton11");
+
+        BIndo_1.add(jRadioButton12);
+        jRadioButton12.setText("jRadioButton12");
+
+        BIndo_1.add(jRadioButton13);
+        jRadioButton13.setText("jRadioButton13");
+
+        BIndo_2.add(jRadioButton9);
+        jRadioButton9.setText("jRadioButton9");
+
+        BIndo_2.add(jRadioButton14);
+        jRadioButton14.setText("jRadioButton14");
+
+        BIndo_2.add(JawabanBIndo2);
+        JawabanBIndo2.setText("jRadioButton15");
+
+        BIndo_2.add(jRadioButton16);
+        jRadioButton16.setText("jRadioButton16");
+
+        BIndo_2.add(jRadioButton17);
+        jRadioButton17.setText("jRadioButton17");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGap(437, 437, 437)
+                .addComponent(jLabel29)
+                .addGap(388, 388, 388))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtIdPeserta2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SoalBIndo1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(SoalBIndo2, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                                                .addComponent(jRadioButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(35, 35, 35)
+                                                .addComponent(jRadioButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(JawabanBIndo2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                                                .addComponent(JawabanBIndo1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(35, 35, 35)
+                                                .addComponent(jRadioButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(jRadioButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(40, 40, 40)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jRadioButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(336, 336, 336))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(937, 937, 937))))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel29)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(txtIdPeserta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(SoalBIndo1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JawabanBIndo1)
+                    .addComponent(jRadioButton10)
+                    .addComponent(jRadioButton11)
+                    .addComponent(jRadioButton12)
+                    .addComponent(jRadioButton13))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(SoalBIndo2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton9)
+                    .addComponent(jRadioButton14)
+                    .addComponent(JawabanBIndo2)
+                    .addComponent(jRadioButton16)
+                    .addComponent(jRadioButton17))
+                .addGap(64, 64, 64)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+
+        jLayeredPane2.setLayer(jPanel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1089, Short.MAX_VALUE)
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 565, Short.MAX_VALUE)
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("tab6", jLayeredPane2);
+
+        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
+        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
+        jInternalFrame2Layout.setHorizontalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+        jInternalFrame2Layout.setVerticalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addGap(36, 36, 36))
+                .addComponent(jInternalFrame2)
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jInternalFrame2)
+                .addContainerGap())
         );
-
-        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1163,6 +1769,26 @@ public class SistemUjian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
+    private void txtIdPesertaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPesertaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdPesertaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ctUMTK.nilai();
+        ctPst.isiTable();
+        ctUMTK.reset();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void Tabel1() {
+        jPanel1.setVisible(true);
+    }
+    public void Tabel7() {
+        jPanel7.setVisible(true);
+    }
+    public void Tabel9() {
+        jPanel9.setVisible(true);
+    }
     private void btnSimpan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpan2ActionPerformed
         ctSBIND.insert();
         ctSBIND.isiTable();
@@ -1339,6 +1965,29 @@ public class SistemUjian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        ctUBIND.nilai();
+        ctPst.isiTable();
+        ctUBIND.reset();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    public void ClearJawabanMTK()
+    {
+        MTK_1.clearSelection();
+        MTK_2.clearSelection();
+    }
+    
+    public void ClearJawabanBIndo()
+    {
+        BIndo_1.clearSelection();
+        BIndo_2.clearSelection();
+    }
+    
+    private void txtIdPeserta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPeserta2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdPeserta2ActionPerformed
+    
     
     
     /**
@@ -1367,7 +2016,7 @@ public class SistemUjian extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SistemUjian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+            
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1377,6 +2026,17 @@ public class SistemUjian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup BIndo_1;
+    private javax.swing.ButtonGroup BIndo_2;
+    private javax.swing.JRadioButton JawabanBIndo1;
+    private javax.swing.JRadioButton JawabanBIndo2;
+    private javax.swing.JRadioButton JawabanMTK2;
+    private javax.swing.ButtonGroup MTK_1;
+    private javax.swing.ButtonGroup MTK_2;
+    private javax.swing.JLabel SoalBIndo1;
+    private javax.swing.JLabel SoalBIndo2;
+    private javax.swing.JLabel SoalMTK1;
+    private javax.swing.JLabel SoalMTK2;
     private javax.swing.JTable TabelDataUjian;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnHapus1;
@@ -1391,10 +2051,13 @@ public class SistemUjian extends javax.swing.JFrame {
     private javax.swing.JButton btnUbah1;
     private javax.swing.JButton btnUbah2;
     private javax.swing.JLabel id_ujian1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1407,24 +2070,53 @@ public class SistemUjian extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JRadioButton jawabanMTK1;
     private javax.swing.JLabel jumlah_soal1;
     private javax.swing.JLabel nama_matpel1;
     private javax.swing.JTable tabelData;
@@ -1436,6 +2128,8 @@ public class SistemUjian extends javax.swing.JFrame {
     private javax.swing.JTextField txtID_Peserta;
     private javax.swing.JTextField txtID_Soal;
     private javax.swing.JTextField txtID_Soal1;
+    private javax.swing.JTextField txtIdPeserta;
+    private javax.swing.JTextField txtIdPeserta2;
     private javax.swing.JTextField txtJawaban;
     private javax.swing.JTextField txtJawaban1;
     private javax.swing.JComboBox<String> txtJkl;
@@ -1453,4 +2147,6 @@ public class SistemUjian extends javax.swing.JFrame {
     Controller.UjianController ctUjn;
     Controller.ControllerSoalMTK ctSMTK;
     Controller.ControllerSoalBIND ctSBIND;
+    Controller.ControllerUjianMTK ctUMTK;
+    Controller.ControllerUjianBIndo ctUBIND;
 }

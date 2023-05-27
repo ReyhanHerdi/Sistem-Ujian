@@ -121,6 +121,34 @@ public class Peserta {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    /**
+     * @return the skor_mtk
+     */
+    public Integer getSkor_mtk() {
+        return skor_mtk;
+    }
+
+    /**
+     * @param skor_mtk the skor_mtk to set
+     */
+    public void setSkor_mtk(Integer skor_mtk) {
+        this.skor_mtk = skor_mtk;
+    }
+    
+    /**
+     * @return the skor_bind
+     */
+    public Integer getSkor_bind() {
+        return skor_bind;
+    }
+    
+    /**
+     * @param skor_bind the skor_bind to set
+     */
+    public void setSkor_bind(Integer skor_bind) {
+        this.skor_bind = skor_bind;
+    }
 
     private Integer id_peserta;
     private String email;
@@ -130,5 +158,7 @@ public class Peserta {
     private String kelas;
     private String jenis_kelamin;
     private String password;
+    private Integer skor_mtk;
+    private Integer skor_bind;
 
 }

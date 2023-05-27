@@ -24,7 +24,7 @@ public class ModelTabelPeserta extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 8;
+        return 10;
     }
 
     @Override
@@ -46,6 +46,10 @@ public class ModelTabelPeserta extends AbstractTableModel {
                 return "Jenis_kelamin";
             case 7:
                 return "Password";
+            case 8:
+                return "Matematika";
+            case 9:
+                return "Bahasa Indonesia";
             default:
                 return null;
         }
@@ -71,6 +75,10 @@ public class ModelTabelPeserta extends AbstractTableModel {
                 return lstPst.get(rowIndex).getJenis_kelamin();
             case 7:
                 return lstPst.get(rowIndex).getPassword();
+            case 8:
+                return lstPst.get(rowIndex).getSkor_mtk();
+            case 9:
+                return lstPst.get(rowIndex).getSkor_bind();
             default:
                 return null;
         }

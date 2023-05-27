@@ -43,6 +43,7 @@ public class DAOPeserta implements IDAOPeserta{
             statement.setString(6, b.getKelas());
             statement.setString(7, b.getJenis_kelamin());
             statement.setString(8, b.getPassword());
+            statement.setInt(9, b.getSkor_mtk());
             statement.execute();
         } catch (SQLException e) {
             System.out.println("tidak tampil:"+e);
@@ -130,6 +131,8 @@ public class DAOPeserta implements IDAOPeserta{
                 pst.setKelas(rs.getString("kelas"));
                 pst.setJenis_kelamin(rs.getString("jenis_kelamin"));
                 pst.setPassword(rs.getString("password"));
+                pst.setSkor_mtk(rs.getInt("skor_mtk"));
+                pst.setSkor_bind(rs.getInt("skor_bind"));
                 lstPst.add(pst);
             } 
             
