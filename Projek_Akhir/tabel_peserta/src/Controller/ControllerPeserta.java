@@ -46,8 +46,7 @@ public class ControllerPeserta {
         b.setPassword(stmUjian.getTxtPassword().getText());
 
         iPeserta.insert(b);
-        JOptionPane.showMessageDialog(null, "input berhasil");
-
+//        JOptionPane.showMessageDialog(null, "input berhasil");
     }
     
     public void reset()
@@ -92,13 +91,13 @@ public class ControllerPeserta {
         b.setId_peserta(Integer.valueOf(stmUjian.getTxtID_Peserta().getText()));
 
         iPeserta.update(b);
-        JOptionPane.showMessageDialog(null, "update berhasil");
+//        JOptionPane.showMessageDialog(null, "update berhasil");
     }
     
     public void delete()
     {
         iPeserta.delete(Integer.parseInt(stmUjian.getTxtID_Peserta().getText()));
-        JOptionPane.showMessageDialog(null, "delete berhasil");
+//        JOptionPane.showMessageDialog(null, "delete berhasil");
     }
     
     SistemUjian stmUjian;

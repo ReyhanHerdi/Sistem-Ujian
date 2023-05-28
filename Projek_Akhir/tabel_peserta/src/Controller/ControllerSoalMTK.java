@@ -43,7 +43,7 @@ public class ControllerSoalMTK {
         b.setJawaban(stmUjian.getTxtJawaban().getText());
 
         iSoalMTK.insert(b);
-        JOptionPane.showMessageDialog(null, "input berhasil");
+//        JOptionPane.showMessageDialog(null, "input berhasil");
 
     }
     
@@ -74,13 +74,13 @@ public class ControllerSoalMTK {
         b.setId_soal(Integer.valueOf(stmUjian.getTxtID_Soal().getText()));
 
         iSoalMTK.update(b);
-        JOptionPane.showMessageDialog(null, "update berhasil");
+//        JOptionPane.showMessageDialog(null, "update berhasil");
     }
     
     public void delete()
     {
         iSoalMTK.delete(Integer.parseInt(stmUjian.getTxtID_Soal().getText()));
-        JOptionPane.showMessageDialog(null, "delete berhasil");
+//        JOptionPane.showMessageDialog(null, "delete berhasil");
     }
     
     SistemUjian stmUjian;

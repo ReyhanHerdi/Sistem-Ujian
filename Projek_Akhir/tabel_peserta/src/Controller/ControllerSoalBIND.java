@@ -41,7 +41,7 @@ public class ControllerSoalBIND {
         b.setJawaban(stmUjian.getTxtJawaban1().getText());
 
         iSoalBIND.insert(b);
-        JOptionPane.showMessageDialog(null, "input berhasil");
+//        JOptionPane.showMessageDialog(null, "input berhasil");
 
     }
     
@@ -71,13 +71,13 @@ public class ControllerSoalBIND {
         b.setId_soal(Integer.valueOf(stmUjian.getTxtID_Soal1().getText()));
 
         iSoalBIND.update(b);
-        JOptionPane.showMessageDialog(null, "update berhasil");
+//        JOptionPane.showMessageDialog(null, "update berhasil");
     }
     
     public void delete()
     {
         iSoalBIND.delete(Integer.parseInt(stmUjian.getTxtID_Soal1().getText()));
-        JOptionPane.showMessageDialog(null, "delete berhasil");
+//        JOptionPane.showMessageDialog(null, "delete berhasil");
     }
     
     SistemUjian stmUjian;

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.mysql.jdbc.PreparedStatement;
 import DAOInterface.IDAOSoalMTK;
+import javax.swing.JOptionPane;
 /**
  *
  * @author DAFFA
@@ -39,6 +40,8 @@ public class DAOSoalMTK implements IDAOSoalMTK{
             statement.setString(2, b.getPertanyaan());
             statement.setString(3, b.getJawaban());
             statement.execute();
+            
+            JOptionPane.showMessageDialog(null, "input berhasil");
         } catch (SQLException e) {
             System.out.println("tidak tampil:"+e);
         }
@@ -65,6 +68,8 @@ public class DAOSoalMTK implements IDAOSoalMTK{
             statement.setString(2, b.getJawaban());
             statement.setInt(3, b.getId_soal());
             statement.execute();
+            
+            JOptionPane.showMessageDialog(null, "update berhasil");
         } catch (SQLException e) {
             System.out.println("gagal update:"+e);
         }
@@ -81,18 +86,25 @@ public class DAOSoalMTK implements IDAOSoalMTK{
     public void delete(int id_soal) {
         PreparedStatement statement = null;
         try {
-            statement = (PreparedStatement) con.prepareStatement(strDelete);
+            int confirm = JOptionPane.showConfirmDialog(null, "hapus data?");
             
-            statement.setInt(1, id_soal);
-            statement.execute();
+            if (confirm == 0) {
+                statement = (PreparedStatement) con.prepareStatement(strDelete);
+            
+                statement.setInt(1, id_soal);
+                statement.execute();
+            
+                JOptionPane.showMessageDialog(null, "delete berhasil");
+            }
+            
         } catch (SQLException e) {
-            System.out.println("gagal update:"+e);
+            System.out.println("gagal delete:"+e);
         }
         finally {
             try {
                 statement.close();
             } catch (SQLException ex) {
-                System.out.println("gagal update:"+ex);
+                System.out.println("gagal delete:"+ex);
             }
         }
     }

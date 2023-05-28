@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import DAOInterface.IDAOPeserta;
 import com.mysql.jdbc.PreparedStatement;
+import javax.swing.JOptionPane;
 /**
  *
  * @author DAFFA
@@ -44,7 +45,10 @@ public class DAOPeserta implements IDAOPeserta{
             statement.setString(7, b.getJenis_kelamin());
             statement.setString(8, b.getPassword());
             statement.execute();
+            
+            JOptionPane.showMessageDialog(null, "input berhasil");
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ID Sudah terdaftar");
             System.out.println("tidak tampil:"+e);
         }
         finally {
@@ -75,6 +79,8 @@ public class DAOPeserta implements IDAOPeserta{
             statement.setString(7, b.getPassword());
             statement.setInt(8, b.getId_peserta());
             statement.execute();
+            
+            JOptionPane.showMessageDialog(null, "update berhasil");
         } catch (SQLException e) {
             System.out.println("gagal update:"+e);
         }
@@ -91,10 +97,17 @@ public class DAOPeserta implements IDAOPeserta{
     public void delete(int id_peserta) {
         PreparedStatement statement = null;
         try {
-            statement = (PreparedStatement) con.prepareStatement(strDelete);
+            int confirm = JOptionPane.showConfirmDialog(null, "hapus data?");
             
-            statement.setInt(1, id_peserta);
-            statement.execute();
+            if (confirm == 0) {
+                statement = (PreparedStatement) con.prepareStatement(strDelete);
+            
+                statement.setInt(1, id_peserta);
+                statement.execute();
+
+                JOptionPane.showMessageDialog(null, "delete berhasil");
+            }
+            
         } catch (SQLException e) {
             System.out.println("gagal update:"+e);
         }

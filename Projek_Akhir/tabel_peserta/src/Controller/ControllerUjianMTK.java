@@ -35,16 +35,31 @@ public class ControllerUjianMTK {
     {
         ArrayList<Object> soal = stmUjian.KirimPertanyaan();
         
-        stmUjian.getSoalMTK1().setText(soal.get(0).toString());
-        stmUjian.getSoalMTK2().setText(soal.get(1).toString());
+        try {
+            stmUjian.getSoalMTK1().setText(soal.get(0).toString());
+            stmUjian.getSoalMTK2().setText(soal.get(1).toString());
+            stmUjian.getSoalMTK3().setText(soal.get(2).toString());
+            stmUjian.getSoalMTK4().setText(soal.get(3).toString());
+            stmUjian.getSoalMTK5().setText(soal.get(4).toString());
+        } catch (Exception e) {
+            System.out.println("Soal tidak mencukupi");
+        }
+        
     }
     
     public void TampilJawaban()
     {
         ArrayList<Object> jawaban = stmUjian.KirimJawaban();
+        try {
+            stmUjian.getJawabanMTK1().setText(jawaban.get(0).toString());
+            stmUjian.getJawabanMTK2().setText(jawaban.get(1).toString());
+            stmUjian.getJawabanMTK3().setText(jawaban.get(2).toString());
+            stmUjian.getJawabanMTK4().setText(jawaban.get(3).toString());
+            stmUjian.getJawabanMTK5().setText(jawaban.get(4).toString());
+        } catch (Exception e) {
+            System.out.println("Jawaban tidak mencukupi");
+        }
         
-        stmUjian.getJawabanMTK1().setText(jawaban.get(0).toString());
-        stmUjian.getJawabanMTK2().setText(jawaban.get(1).toString());
     }
     
     public void nilai()
@@ -56,18 +71,31 @@ public class ControllerUjianMTK {
         if (stmUjian.getJawabanMTK2().isSelected()) {
             skor++;  
         }
+        if (stmUjian.getJawabanMTK3().isSelected()) {
+            skor++;  
+        }
+        if (stmUjian.getJawabanMTK4().isSelected()) {
+            skor++;  
+        }
+        if (stmUjian.getJawabanMTK5().isSelected()) {
+            skor++;  
+        }
+        
+        int totalSkor = skor * 20;
         
         System.out.print(skor);
         
         try {
             Peserta b = new Peserta();
-            b.setSkor_mtk(skor);
+            b.setSkor_mtk(totalSkor);
             b.setId_peserta(Integer.valueOf(stmUjian.getTxtIdPeserta().getText()));
         
             iUjianMTK.update(b);
         
             JOptionPane.showMessageDialog(null, "Ujian Selesai");
             stmUjian.Tabel1();
+            
+            reset();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ID peserta belum diisi");
             stmUjian.Tabel7();
