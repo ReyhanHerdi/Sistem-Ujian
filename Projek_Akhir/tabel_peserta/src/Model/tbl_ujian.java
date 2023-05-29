@@ -24,7 +24,7 @@ public class tbl_ujian extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 3;
     }
     
     //@Override
@@ -40,7 +40,6 @@ public class tbl_ujian extends AbstractTableModel{
             case 0 -> "ID Ujian";
             case 1 -> "Mata Pelajaran";
             case 2 -> "Jumlah Soal";
-            case 3 -> "Lihat Soal";
             default -> null;
         };
     }
@@ -50,7 +49,6 @@ public class tbl_ujian extends AbstractTableModel{
             case 0 -> tblUjian.get(rowIndex).getId_ujian();
             case 1 -> tblUjian.get(rowIndex).getNama_matpel();
             case 2 -> tblUjian.get(rowIndex).getJumlah_soal();
-            case 3 -> "go";
             default -> null;
         };
     }
