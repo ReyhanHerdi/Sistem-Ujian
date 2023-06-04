@@ -163,7 +163,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="309" max="32767" attributes="0"/>
+                          <EmptySpace pref="367" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="539" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
@@ -403,7 +403,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Aplikasi CRUD MVC"/>
+                    <Property name="text" type="java.lang.String" value="Para Tentara Ujian"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -485,7 +485,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="319" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="377" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -861,7 +861,7 @@
                                   <Component id="btnReset2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="134" max="32767" attributes="0"/>
+                          <EmptySpace pref="192" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" min="-2" pref="539" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
@@ -1023,8 +1023,8 @@
               </AccessibilityProperties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="tab5">
-                    <Property name="tabTitle" type="java.lang.String" value="tab5"/>
+                  <JTabbedPaneConstraints tabName="Ujian Matematika">
+                    <Property name="tabTitle" type="java.lang.String" value="Ujian Matematika"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -1142,7 +1142,7 @@
                                   <Component id="jRadioButton6" min="-2" pref="106" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="398" max="32767" attributes="0"/>
+                          <EmptySpace pref="456" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1509,7 +1509,7 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="MTK_5"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="60"/>
+                    <Property name="text" type="java.lang.String" value="65"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1517,8 +1517,8 @@
             <Container class="javax.swing.JLayeredPane" name="jLayeredPane2">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="tab6">
-                    <Property name="tabTitle" type="java.lang.String" value="tab6"/>
+                  <JTabbedPaneConstraints tabName="Ujian Bahasa Indonesia">
+                    <Property name="tabTitle" type="java.lang.String" value="Ujian Bahasa Indonesia"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>

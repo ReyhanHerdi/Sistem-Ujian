@@ -52,7 +52,7 @@ public class ControllerPeserta {
     public void reset()
     {
      if (!stmUjian.getTxtID_Peserta().isEnabled())
-          stmUjian.getTxtID_Peserta().setEnabled(true);
+        stmUjian.getTxtID_Peserta().setEnabled(true);
         stmUjian.getTxtID_Peserta().setText("");
         stmUjian.getTxtEmail().setText("");
         stmUjian.getTxtNama_Peserta().setText("");

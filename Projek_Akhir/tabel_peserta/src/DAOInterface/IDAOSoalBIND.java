@@ -5,6 +5,7 @@
 package DAOInterface;
 
 import Model.SoalBIND;
+import Model.ujian;
 import java.util.List;
 
 /**
@@ -19,6 +20,9 @@ public interface IDAOSoalBIND {
     //update data
     public void update(SoalBIND b);
     //delete data
+    public int count();
+    
+    public void updateTabelUjian(ujian b);
 
     /**
      *

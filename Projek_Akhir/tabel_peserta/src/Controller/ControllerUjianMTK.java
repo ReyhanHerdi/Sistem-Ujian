@@ -114,6 +114,4 @@ public class ControllerUjianMTK {
     List<SoalMTK> lstSMTK;
     IDAOPeserta iPeserta;
     List<Peserta> lstPst;
-    
-    
 }

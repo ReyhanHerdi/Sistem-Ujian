@@ -11,6 +11,7 @@ import Model.ModelTabelSoalBIND;
 import java.util.List;
 import javax.swing.JOptionPane;
 import DAOInterface.IDAOSoalBIND;
+import Model.ujian;
 
 
 
@@ -78,6 +79,12 @@ public class ControllerSoalBIND {
     {
         iSoalBIND.delete(Integer.parseInt(stmUjian.getTxtID_Soal1().getText()));
 //        JOptionPane.showMessageDialog(null, "delete berhasil");
+    }
+    
+    public void updateTabelUjian(){
+        ujian b = new ujian();
+        b.setJumlah_soal(iSoalBIND.count());;
+        iSoalBIND.updateTabelUjian(b);
     }
     
     SistemUjian stmUjian;

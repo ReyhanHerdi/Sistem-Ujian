@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import com.mysql.jdbc.PreparedStatement;
 import DAOInterface.IDAOSoalMTK;
+import Model.tbl_ujian;
+import Model.ujian;
 import javax.swing.JOptionPane;
 /**
  *
@@ -129,7 +131,7 @@ public class DAOSoalMTK implements IDAOSoalMTK{
                 smtk.setJawaban(rs.getString("jawaban"));
                 lstSMTK.add(smtk);
                 
-                System.out.print(lstSMTK);
+                //System.out.print(lstSMTK);
             } 
             
         }
@@ -139,6 +141,45 @@ public class DAOSoalMTK implements IDAOSoalMTK{
         }
         return lstSMTK;
     }
+    
+    public int count() {
+        PreparedStatement statement = null;
+        try {
+//            statement = (PreparedStatement) con.prepareStatement(strCount);
+//            statement.execute();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(strCount);
+            rs.next();
+            int count =rs.getInt(1);
+
+            return count;
+        } catch (Exception e) {
+            System.out.println("gak count"+e);
+            
+            return 0;
+        }  
+    }
+    
+    @Override
+    public void updateTabelUjian(ujian b){
+        PreparedStatement statement = null;
+        try {
+            statement = (PreparedStatement) con.prepareStatement(strUpdateTabelUjian);
+            
+            //statement.setInt(1, b.getId_ujian());
+            statement.setInt(1, b.getJumlah_soal());
+            statement.execute();
+        } catch (SQLException e) {
+            System.out.println("update gagal:"+e);
+        }
+        finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                System.out.println("update gagal:"+ex);
+            }
+        }
+    }
          
     Connection con;
     //SQL Query
@@ -146,5 +187,6 @@ public class DAOSoalMTK implements IDAOSoalMTK{
     String strInsert = "insert into soal_matematika(id_soal, pertanyaan, jawaban) VALUES (?,?,?);";
     String strUpdate = "update soal_matematika set pertanyaan=?, jawaban=? where id_soal=?";
     String strDelete = "delete from soal_matematika where id_soal=?";
-            
+    String strCount = "select count(*) from soal_matematika;";
+    String strUpdateTabelUjian = "update ujian set jumlah_soal=? where id_ujian=1" ;            
 }

@@ -11,6 +11,8 @@ import Model.ModelTabelSoalMTK;
 import java.util.List;
 import javax.swing.JOptionPane;
 import DAOInterface.IDAOSoalMTK;
+import DAOInterface.IDAOUjian;
+import Model.ujian;
 
 
 
@@ -24,6 +26,7 @@ public class ControllerSoalMTK {
         this.stmUjian = stmUjian;
         iSoalMTK = new DAOSoalMTK();
         iSoalMTK.getAll();
+        iSoalMTK.count();
     }
     
     public void isiTable()
@@ -32,7 +35,7 @@ public class ControllerSoalMTK {
         ModelTabelSoalMTK tabelSMTK = new ModelTabelSoalMTK(lstSMTK);
         stmUjian.getTabelMTK().setModel(tabelSMTK);
         
-        System.out.println(lstSMTK.toString());
+        //System.out.println(lstSMTK.toString());
     }
     
     public void insert()
@@ -83,8 +86,15 @@ public class ControllerSoalMTK {
 //        JOptionPane.showMessageDialog(null, "delete berhasil");
     }
     
+    public void updateTabelUjian(){
+        ujian b = new ujian();
+        b.setJumlah_soal(iSoalMTK.count());;
+        iSoalMTK.updateTabelUjian(b);
+    }
+    
     SistemUjian stmUjian;
     IDAOSoalMTK iSoalMTK;
     List<SoalMTK> lstSMTK;
+    IDAOUjian iUjian;
 
 }

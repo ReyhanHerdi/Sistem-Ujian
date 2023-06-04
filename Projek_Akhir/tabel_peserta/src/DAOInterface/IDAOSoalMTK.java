@@ -5,6 +5,7 @@
 package DAOInterface;
 
 import Model.SoalMTK;
+import Model.ujian;
 import java.util.List;
 
 /**
@@ -25,4 +26,7 @@ public interface IDAOSoalMTK {
      * @param id_soal
      */
     public void delete(int id_soal);
+    public int count();
+    
+    public void updateTabelUjian(ujian b);
    }

@@ -474,6 +474,7 @@ public class SistemUjian extends javax.swing.JFrame {
         ctUjn.isiTabel();
         ctSMTK = new Controller.ControllerSoalMTK(this);
         ctSMTK.isiTable();
+        
         ctSBIND = new Controller.ControllerSoalBIND(this);
         ctSBIND.isiTable();
         
@@ -1047,7 +1048,7 @@ public class SistemUjian extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setText("Aplikasi CRUD MVC");
+        jLabel11.setText("Para Tentara Ujian");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1083,7 +1084,7 @@ public class SistemUjian extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtID_Peserta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1229,7 +1230,7 @@ public class SistemUjian extends javax.swing.JFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 319, Short.MAX_VALUE)))
+                        .addGap(0, 289, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1557,7 +1558,7 @@ public class SistemUjian extends javax.swing.JFrame {
                         .addComponent(btnHapus2)
                         .addGap(18, 18, 18)
                         .addComponent(btnReset2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
@@ -1714,7 +1715,7 @@ public class SistemUjian extends javax.swing.JFrame {
         jRadioButton30.setText("60");
 
         MTK_5.add(jRadioButton31);
-        jRadioButton31.setText("60");
+        jRadioButton31.setText("65");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1803,7 +1804,7 @@ public class SistemUjian extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addComponent(jRadioButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(398, Short.MAX_VALUE))
+                .addContainerGap(368, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1875,7 +1876,7 @@ public class SistemUjian extends javax.swing.JFrame {
                 .addContainerGap(122, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab5", jPanel7);
+        jTabbedPane1.addTab("Ujian Matematika", jPanel7);
         jPanel7.getAccessibleContext().setAccessibleName("");
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -2200,7 +2201,7 @@ public class SistemUjian extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab6", jLayeredPane2);
+        jTabbedPane1.addTab("Ujian Bahasa Indonesia", jLayeredPane2);
 
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
@@ -2267,6 +2268,8 @@ public class SistemUjian extends javax.swing.JFrame {
         ctSBIND.reset();
         ctUBIND.TampilSoal();
         ctUBIND.TampilJawaban();
+        ctSBIND.updateTabelUjian();
+        ctUjn.isiTabel();
     }//GEN-LAST:event_btnSimpan2ActionPerformed
 
     private void btnReset2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReset2ActionPerformed
@@ -2279,6 +2282,8 @@ public class SistemUjian extends javax.swing.JFrame {
         ctSBIND.reset();
         ctUBIND.TampilSoal();
         ctUBIND.TampilJawaban();
+        ctSBIND.updateTabelUjian();
+        ctUjn.isiTabel();;
     }//GEN-LAST:event_btnHapus2ActionPerformed
 
     private void btnUbah2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbah2ActionPerformed
@@ -2312,6 +2317,8 @@ public class SistemUjian extends javax.swing.JFrame {
         ctSMTK.reset();
         ctUMTK.TampilSoal();
         ctUMTK.TampilJawaban();
+        ctSMTK.updateTabelUjian();
+        ctUjn.isiTabel();
     }//GEN-LAST:event_btnSimpan1ActionPerformed
 
     private void btnReset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReset1ActionPerformed
@@ -2324,6 +2331,8 @@ public class SistemUjian extends javax.swing.JFrame {
         ctSMTK.reset();
         ctUMTK.TampilSoal();
         ctUMTK.TampilJawaban();
+        ctSMTK.updateTabelUjian();
+        ctUjn.isiTabel();
     }//GEN-LAST:event_btnHapus1ActionPerformed
 
     private void btnUbah1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbah1ActionPerformed
@@ -2350,41 +2359,6 @@ public class SistemUjian extends javax.swing.JFrame {
     private void txtPertanyaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPertanyaanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPertanyaanActionPerformed
-
-    private void TabelDataUjianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelDataUjianMouseClicked
-        // TODO add your handling code here:
-        int row = getTabelDataUjian().getSelectedRow();
-        ctUjn.isiField(row);
-    }//GEN-LAST:event_TabelDataUjianMouseClicked
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        ctUjn.delete();
-        ctUjn.isiTabel();
-        ctUjn.reset();
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        ctUjn.update();
-        ctUjn.isiTabel();
-        ctUjn.reset();
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        ctUjn.reset();
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ctUjn.insert();
-        ctUjn.isiTabel();
-        ctUjn.reset();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void txtID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtID1ActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         ctPst.insert();
@@ -2488,6 +2462,41 @@ public class SistemUjian extends javax.swing.JFrame {
     private void jRadioButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton17ActionPerformed
+
+    private void TabelDataUjianMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelDataUjianMouseClicked
+        // TODO add your handling code here:
+        int row = getTabelDataUjian().getSelectedRow();
+        ctUjn.isiField(row);
+    }//GEN-LAST:event_TabelDataUjianMouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.delete();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.update();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        ctUjn.insert();
+        ctUjn.isiTabel();
+        ctUjn.reset();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void txtID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtID1ActionPerformed
     
     
     
