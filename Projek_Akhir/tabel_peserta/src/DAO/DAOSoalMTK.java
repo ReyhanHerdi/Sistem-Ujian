@@ -145,8 +145,6 @@ public class DAOSoalMTK implements IDAOSoalMTK{
     public int count() {
         PreparedStatement statement = null;
         try {
-//            statement = (PreparedStatement) con.prepareStatement(strCount);
-//            statement.execute();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(strCount);
             rs.next();

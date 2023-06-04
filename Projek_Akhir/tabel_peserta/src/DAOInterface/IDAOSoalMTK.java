@@ -20,13 +20,7 @@ public interface IDAOSoalMTK {
     //update data
     public void update(SoalMTK b);
     //delete data
-
-    /**
-     *
-     * @param id_soal
-     */
     public void delete(int id_soal);
     public int count();
-    
     public void updateTabelUjian(ujian b);
    }
